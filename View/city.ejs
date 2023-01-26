@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Population</title>
+</head>
+<body>
+ 
+
+<h1>Population by Country</h1>
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th {
+  background-color: #08f7f7c2;
+}
+tr:hover {background-color: #D6EEEE;}
+    </style>
+<table width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th> 
+        <th>Contry Code</th> 
+        <th>District</th> 
+        <th>Population</th> 
+    </tr>
+    
+    <% if (city.length > 0 ) { %>
+        <% for (var i =0; i < city.length; i++) { %>
+            <tr>
+                <td> <%- city[i].newid %></td>
+                <td> <%- city[i].Name %></td>
+                <td> <%- city[i].CountryCode %></td>
+                <td> <%- city[i].District %></td>
+                <td> <%- city[i].Population %></td>
+            </tr>
+        <% } %>
+
+        <% } else {  %>
+<h3 style="color: red;">Sorry No Result Found</h3>
+            <% } %>
+
+</table>
+
+</body>  
+
+
+</html>

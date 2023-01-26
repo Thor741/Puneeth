@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <title>Country</title>
+<head>
+ <h1>Country</h1>
+</head>
+<style>
+    table ,th ,td {
+        border: 1px solid black;
+        /* border-collapse: collapse; */
+    }
+    tr:nth-child(odd) {
+  background-color: #D6EEEE;
+  }
+  th{
+    background-color: rgb(17, 205, 238);
+  }
+</style>
+<body>
+    <a href="/"><button>HOME</button></a>
+    <table width="100%">
+    <tr>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Region</th>
+        <th>Surface Area</th>
+        <th>Head Of State</th>
+    </tr>
+    
+    <% if (country.length > 0 ) { %>
+        <% for (var i =0; i < country.length; i++) { %>
+            <tr>
+                <td> <%- country[i].Name %></td>
+                <td> <%- country[i].Continent %></td>
+                <td> <%- country[i].Region %></td>
+                <td> <%- country[i].SurfaceArea %></td>
+                <td> <%- country[i].HeadOfState %></td>
+            </tr>
+        <% } %>
+
+        <% } else {  %>
+<h3 style="color: red;">Sorry No Result Found!</h3>
+            <% } %>
+
+    </table>
+</body>
+</html>
