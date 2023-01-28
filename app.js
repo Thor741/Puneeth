@@ -53,7 +53,7 @@ app.get('/country',function(req,res) {
     });
 
 app.get('/',function(req,res) {
-    res.sendFile(__dirname+"/View/signup");
+    res.render(__dirname+"/View/signup",{message : req.flash('message')})
     });
 
     app.post('/',function(req,res){
@@ -73,6 +73,24 @@ app.get('/',function(req,res) {
     });
 
     app.get('/signin',function(req,res) {
-        res.sendFile(__dirname+'/View/signin');      
-        });
+        res.render(__dirname+'/View/signin',{message : req.flash('message')})
+    });
+    
+    app.post('/signin',function(req,res){
+        var phno = req.body.phno;
+        var pass = req.body.pass;
+            var sql = "select * from details where phno="+phno+" and pass='"+pass+"'";
+            con.query(sql,function (err,result) {
+                if (err) throw err;
+                
+                if (result.length > 0) 
+                {   
+                    res.sendFile(__dirname+'/index.html');
+                } else{
+                    req.flash('message',"Please Check the details..!");                        
+                    res.render(__dirname+"/View/signin",{message : req.flash('message')})
+                // res.sendFile(__dirname+'/index.html');
+                };
+    })
+    });
 app.listen(8080);
