@@ -7,16 +7,20 @@ app.use(express.json());
 
 app.set('view engine', 'ejs');
 
-app.get('/Population',function(req,res){
-    var sql = "select * from city";
-    con.query(sql,function (err,result) {
-        if (err) throw err;
-        res.render(__dirname+"/View/city",{city:result})
-})
-});
+// app.get('/Population',function(req,res){
+//     var sql = "select * from city";
+//     con.query(sql,function (err,result) {
+//         if (err) throw err;
+//         res.render(__dirname+"/View/city",{city:result})
+// })
+// });
+// app.get('/Population',function(req,res) {
+//     res.sendFile(__dirname+'/View/search');
+//     });
 
 app.get('/Population',function(req,res) {
-    res.sendFile(__dirname+'/View/city');
+    res.sendFile(__dirname+'/View/search');
+    // res.sendFile(__dirname+'/View/city');
     });
 
 app.get('/Population/:city',function(req,res){
