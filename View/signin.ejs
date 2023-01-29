@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <% if(message.length > 0) { %>
+        <div class="alert alert-warning" role="alert"> <strong><%= message %></strong> </div>
+        <% } %>
+<body class="container-fluid bg-1 text-center" style="background-color:rgba(127, 176, 231, 0.466);">
+    <h2><strong>Please Sign-In</strong> </h2>
+    <form name="form" action="" method="post">
+        <label for="phno">Phone No:</label><br>
+        <input type="tel" pattern="[0-9]{10}" id="phno" name="phno" maxlength="10" required><br><br>
+        <!-- <small>Format: 123-456-7890</small><br><br> -->
+        <label for="Password">Password:</label><br>
+        <input type="password" id="pass" name="pass" maxlength="15" minlength="8" required>
+        <br><br>
+        <button type="submit" class="btn btn-success" >Sign-In</button>
+    </form><br>
+</body>
+</html>

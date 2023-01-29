@@ -21,7 +21,7 @@ tr:hover {background-color: #D6EEEE;}
       <a href="/Country"><button style="background-color: rgba(6, 248, 58, 0.884);">NEXT</button></a></p>
   
       <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-
+      <p><%- include('./search.html'); %></p>
 <table width="100%" class="sortable" >
     <tr>
         <th>ID</th>
@@ -35,9 +35,9 @@ tr:hover {background-color: #D6EEEE;}
         <% for (var i =0; i < city.length; i++) { %>
             <tr>
                 <td> <%- city[i].ID %></td>
-                <td> <a href="https://en.wikipedia.org/wiki/<%- city[i].Name %>"><%- city[i].Name %></a></td>
+                <td> <a href="https://en.wikipedia.org/wiki/<%- city[i].Name %>" target="_blank"><%- city[i].Name %></a></td>
                 <td> <%- city[i].CountryCode %></td>
-                <td> <a href="https://en.wikipedia.org/wiki/<%- city[i].District %>"><%- city[i].District %></a></td>
+                <td> <a href="https://en.wikipedia.org/wiki/<%- city[i].District %>" target="_blank"><%- city[i].District %></a></td>
                 <td> <%- city[i].Population %></td>
             </tr>
         <% } %>
